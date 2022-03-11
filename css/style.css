@@ -17,6 +17,10 @@ textarea {
   font-family: 'Roboto', sans-serif;
 }
 
+
+.bonus-part{
+  border: 3px solid orange;
+}
 /* Vars */
 :root {
   --primary: hsl(0, 0%, 100%);
