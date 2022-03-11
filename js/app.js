@@ -25,9 +25,14 @@ const reportPost = (id) => {
     const remainingPosts = posts.filter((post) => !reportedPostsId.includes(post.id));
     showPosts(remainingPosts);
 };
-
 const displayContent = (text) => {
-    return text.length < 30 ? 'text' : text.slice(0, 30) + "<span class='fw-bold'>... read more</span>";
+    // return text.length < 30 ? 'text' : text.slice(0, 30) + "<span class='fw-bold'>... read more</span>";
+    if(text.length > 30){
+      return text =text.slice(0, 30) + "<span class='fw-bold'>... read more</span>";
+    }
+    else{
+      return text;
+    }
 };
 
 const switchTab = (id) => {
@@ -101,6 +106,7 @@ const createPost = (post) => {
                     <i class="fa-solid fa-ban"></i>
                   </button>
                 </div>
+                
 
                 <div class="post__content">${displayContent(post.description)}</div>
 
